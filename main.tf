@@ -3,8 +3,17 @@ resource "azurerm_resource_group" "TODO" {
   location = var.location
   name     = var.name # calling code must supply the name
   tags     = var.tags
+
+  # this is a test
 }
 
+resource "azurerm_public_ip" "name" {
+  allocation_method = "value"
+  location = "value"
+  name = "value"
+  resource_group_name = "value"
+  
+}
 # required AVM resources interfaces
 resource "azurerm_management_lock" "this" {
   count = var.lock != null ? 1 : 0
